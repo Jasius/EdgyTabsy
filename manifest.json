@@ -1,0 +1,21 @@
+{
+  "name": "EdgyTabsy",
+  "version": "0.0.1",
+  "description": "New tab page with search, top sites and with default new tab page bloat excluded.",
+  "permissions": [
+    "storage"
+  ],
+  "optional_permissions": [
+    "topSites"
+  ],
+  "icons": {
+    "16": "images/icons8-tab-16.png",
+    "32": "images/icons8-tab-32.png",
+    "48": "images/icons8-tab-48.png",
+    "128": "images/icons8-tab-128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "manifest_version": 2
+}
