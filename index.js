@@ -8,7 +8,6 @@ const topSitesDiv = document.getElementById('topSites');
 
 function createTop() {
   chrome.topSites.get(function (topSites) {
-    console.table(topSites)
     topSites.forEach(function (site) {
       const siteTab = document.createElement('div'),
         url = document.createElement('a'),
@@ -51,3 +50,40 @@ chrome.permissions.contains({
     topSitesDiv.appendChild(permissionsAccessCTA);
   }
 });
+
+function readFile () {
+  if (this.files && this.files[0]) {
+    const fileReader = new FileReader();
+    fileReader.addEventListener("load", function (e) {
+      localStorage.setItem('bgImage', e.target.result);
+      document.body.style.backgroundImage = `url(${localStorage.getItem('bgImage')})`
+    });
+    fileReader.readAsDataURL(this.files[0]);
+  }
+}
+
+document.getElementById("imageInput").addEventListener("change", readFile);
+
+const modal = document.getElementById("dialog"),
+closeBtn = document.getElementById("closeModal");
+
+document.getElementById("modalButton").onclick = function showModal () {
+  modal.showModal();
+};
+
+document.getElementById("removeImg").onclick = function removeImg () {
+  document.body.style.backgroundImage = 'url("/images/aoraki.jpg")'
+  localStorage.removeItem('bgImage')
+}
+
+modal.addEventListener("click", (event) => {
+  if (event.target === modal || event.target === closeBtn) {
+    modal.close("cancelled");
+  }
+});
+
+if (localStorage.getItem('bgImage')) {
+  document.body.style.backgroundImage = `url(${localStorage.getItem('bgImage')})`
+} else {
+  document.body.style.backgroundImage = 'url("/images/aoraki.jpg")'
+}

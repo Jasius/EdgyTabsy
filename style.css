@@ -10,7 +10,6 @@
   width: 100px;
   padding: 10px;
   display: inline-block;
-  /* margin-top: 60px; */
 }
 
 .topSite a {
@@ -46,7 +45,6 @@ body {
   font-family: 'Segoe UI', 'Segoe WP', system-ui, Arial, Sans-Serif;
   -webkit-font-smoothing: antialiased;
   background: #222;
-  background-image: url("/images/aoraki.jpg");
   background-size: cover;
 }
 
@@ -1413,4 +1411,13 @@ body:not(.js-focus-visible) .c0137:focus,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#modalButton {
+  all: unset;
+  color: #222;
+  background: rgb(255 255 255 / 0.4);
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
 }
