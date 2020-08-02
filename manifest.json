@@ -1,6 +1,6 @@
 {
   "name": "EdgyTabsy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "New tab page with search, top sites and with default new tab page bloat excluded.",
   "permissions": [
     "storage"
